@@ -178,6 +178,9 @@ private extension MainViewController {
         sourceTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         swapButton.addTarget(self, action: #selector(swapButtonTapped), for: .touchUpInside)
         copyButton.addTarget(self, action: #selector(copyButtonTapped), for: .touchUpInside)
+        sourceLanguageButton.addTarget(self, action: #selector(sourceLanguageTapped), for: .touchUpInside)
+        targetLanguageButton.addTarget(self, action: #selector(targetLanguageTapped), for: .touchUpInside)
+
     }
     
     @objc func textFieldDidChange() {
@@ -317,7 +320,7 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 
            currentLanguageButton?.setTitle(selected.name.capitalized, for: .normal)
            translate()
-        languagePicker.isHidden = false
+        languagePicker.isHidden = true
 
     }
 }
